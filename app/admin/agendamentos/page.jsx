@@ -4,6 +4,7 @@
 // Acesso protegido por login Supabase Auth (crie o usuário em Authentication > Users).
 import { useCallback, useEffect, useState } from 'react';
 import { CheckCircle2, XCircle, MessageCircle, Loader2, LogOut, Plus, Trash2, CalendarClock, ListChecks, Building2 } from 'lucide-react';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabaseClient';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -65,6 +66,7 @@ function Painel() {
       <header className="border-b bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between p-4">
           <h1 className="text-lg font-bold text-slate-800">Painel da Clínica</h1>
+          <Link href="/" className="text-sm text-slate-500 hover:text-slate-800">Ver página de agendamento</Link>
           <button onClick={() => supabase.auth.signOut()} className="flex items-center gap-1 text-sm text-slate-500 hover:text-slate-800">
             <LogOut className="h-4 w-4" /> Sair
           </button>

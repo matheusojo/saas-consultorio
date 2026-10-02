@@ -1,5 +1,2 @@
-import { redirect } from 'next/navigation';
-
-export default function Home() {
-  redirect('/agendar');
-}
+// A página inicial é o próprio agendamento: um único link para pacientes e clínica.
+export { default } from './agendar/page';

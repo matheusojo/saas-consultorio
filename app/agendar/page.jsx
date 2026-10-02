@@ -6,6 +6,7 @@ import {
   CalendarDays, Clock, User, CheckCircle2, ChevronLeft, ChevronRight,
   MessageCircle, Loader2, MapPin,
 } from 'lucide-react';
+import Link from 'next/link';
 import { supabase } from '@/lib/supabaseClient';
 
 // ---------- helpers de data (sem fuso: sempre strings yyyy-mm-dd locais) ----------
@@ -242,6 +243,11 @@ export default function AgendarPage() {
           </form>
         )}
         {erro && !horarioSel && <p className="mt-4 text-center text-sm text-red-600">{erro}</p>}
+
+        {/* Acesso discreto da equipe da clínica (mesmo link do site) */}
+        <footer className="mt-10 text-center">
+          <Link href="/admin/agendamentos" className="text-xs text-slate-400 hover:text-slate-600">Acesso da clínica</Link>
+        </footer>
       </div>
 
       {/* Estilo reutilizável dos inputs */}
